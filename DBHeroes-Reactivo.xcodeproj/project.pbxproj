@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F7592B322CF217C1004C8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B2A2CF217C1004C8606 /* AppDelegate.swift */; };
+		F7592B332CF217C1004C8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B2F2CF217C1004C8606 /* SceneDelegate.swift */; };
+		F7592B342CF217C1004C8606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B302CF217C1004C8606 /* ViewController.swift */; };
+		F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7592B2B2CF217C1004C8606 /* Assets.xcassets */; };
+		F7592B372CF217C1004C8606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7592B2E2CF217C1004C8606 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F7592B0D2CF21700004C8606 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,27 +35,15 @@
 		F7592AF62CF216FF004C8606 /* DBHeroes-Reactivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DBHeroes-Reactivo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7592B0C2CF21700004C8606 /* DBHeroes-ReactivoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DBHeroes-ReactivoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7592B162CF21700004C8606 /* DBHeroes-ReactivoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DBHeroes-ReactivoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7592B2A2CF217C1004C8606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7592B2B2CF217C1004C8606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7592B2C2CF217C1004C8606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7592B2D2CF217C1004C8606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7592B2F2CF217C1004C8606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F7592B302CF217C1004C8606 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F7592B1E2CF21700004C8606 /* Exceptions for "DBHeroes-Reactivo" folder in "DBHeroes-Reactivo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = F7592AF52CF216FF004C8606 /* DBHeroes-Reactivo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F7592AF82CF216FF004C8606 /* DBHeroes-Reactivo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F7592B1E2CF21700004C8606 /* Exceptions for "DBHeroes-Reactivo" folder in "DBHeroes-Reactivo" target */,
-			);
-			path = "DBHeroes-Reactivo";
-			sourceTree = "<group>";
-		};
 		F7592B0F2CF21700004C8606 /* DBHeroes-ReactivoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "DBHeroes-ReactivoTests";
@@ -88,7 +84,7 @@
 		F7592AED2CF216FF004C8606 = {
 			isa = PBXGroup;
 			children = (
-				F7592AF82CF216FF004C8606 /* DBHeroes-Reactivo */,
+				F7592B312CF217C1004C8606 /* DBHeroes-Reactivo */,
 				F7592B0F2CF21700004C8606 /* DBHeroes-ReactivoTests */,
 				F7592B192CF21700004C8606 /* DBHeroes-ReactivoUITests */,
 				F7592AF72CF216FF004C8606 /* Products */,
@@ -105,6 +101,131 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F7592B312CF217C1004C8606 /* DBHeroes-Reactivo */ = {
+			isa = PBXGroup;
+			children = (
+				F7592B392CF2183E004C8606 /* Presentation */,
+				F7592B3A2CF21846004C8606 /* Domain */,
+				F7592B3B2CF21850004C8606 /* Data */,
+				F7592B382CF217C9004C8606 /* SupportFiles */,
+			);
+			path = "DBHeroes-Reactivo";
+			sourceTree = "<group>";
+		};
+		F7592B382CF217C9004C8606 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F7592B2B2CF217C1004C8606 /* Assets.xcassets */,
+				F7592B2A2CF217C1004C8606 /* AppDelegate.swift */,
+				F7592B2C2CF217C1004C8606 /* Info.plist */,
+				F7592B2E2CF217C1004C8606 /* LaunchScreen.storyboard */,
+				F7592B2F2CF217C1004C8606 /* SceneDelegate.swift */,
+				F7592B302CF217C1004C8606 /* ViewController.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		F7592B392CF2183E004C8606 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F7592B3D2CF21865004C8606 /* ViewModels */,
+				F7592B3C2CF2185E004C8606 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F7592B3A2CF21846004C8606 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F7592B452CF218EB004C8606 /* Extensions */,
+				F7592B442CF218E0004C8606 /* UseCase */,
+				F7592B432CF218D7004C8606 /* Entities */,
+				F7592B422CF218CE004C8606 /* Protocols */,
+				F7592B412CF218C5004C8606 /* Tools */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F7592B3B2CF21850004C8606 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F7592B402CF218B4004C8606 /* Repositories */,
+				F7592B3F2CF218A9004C8606 /* Local */,
+				F7592B3E2CF21879004C8606 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F7592B3C2CF2185E004C8606 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7592B3D2CF21865004C8606 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F7592B3E2CF21879004C8606 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F7592B3F2CF218A9004C8606 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		F7592B402CF218B4004C8606 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F7592B412CF218C5004C8606 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F7592B422CF218CE004C8606 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F7592B432CF218D7004C8606 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F7592B442CF218E0004C8606 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F7592B452CF218EB004C8606 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +240,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F7592AF82CF216FF004C8606 /* DBHeroes-Reactivo */,
 			);
 			name = "DBHeroes-Reactivo";
 			packageProductDependencies = (
@@ -225,6 +343,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */,
+				F7592B372CF217C1004C8606 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +369,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7592B322CF217C1004C8606 /* AppDelegate.swift in Sources */,
+				F7592B332CF217C1004C8606 /* SceneDelegate.swift in Sources */,
+				F7592B342CF217C1004C8606 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +404,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		F7592B2E2CF217C1004C8606 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7592B2D2CF217C1004C8606 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		F7592B202CF21700004C8606 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -290,10 +424,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DBHeroes-Reactivo/Info.plist";
+				INFOPLIST_FILE = "DBHeroes-Reactivo/SupportFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,6 +436,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Diego.DBHeroes-Reactivo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,10 +454,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DBHeroes-Reactivo/Info.plist";
+				INFOPLIST_FILE = "DBHeroes-Reactivo/SupportFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,6 +466,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Diego.DBHeroes-Reactivo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
