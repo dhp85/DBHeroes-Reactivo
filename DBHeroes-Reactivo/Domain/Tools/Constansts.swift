@@ -7,4 +7,4 @@
 import Foundation
 
 let CONST_URL_SECRET = "https://dragonball.keepcoding.education"
-let CONST_TOKEN_ID_KEYCHAIN = "tokenJWTKeyChainAppxxxxx"
+var CONST_TOKEN_ID_KEYCHAIN = "tokenJWTKeyChainAppxxxxx"

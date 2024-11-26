@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		F70728842CF5CB5000B88F59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70728822CF5CB5000B88F59 /* HomeViewController.swift */; };
 		F70728852CF5CB5000B88F59 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70728832CF5CB5000B88F59 /* HomeViewController.xib */; };
+		F70728882CF5DE2600B88F59 /* HeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70728862CF5DE2600B88F59 /* HeroesTableViewController.swift */; };
+		F70728892CF5DE2600B88F59 /* HeroesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70728872CF5DE2600B88F59 /* HeroesTableViewController.xib */; };
+		F707288C2CF5DEFD00B88F59 /* HeroesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707288B2CF5DEF200B88F59 /* HeroesNetwork.swift */; };
+		F707288E2CF5DF9900B88F59 /* HeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707288D2CF5DF9000B88F59 /* HeroesModel.swift */; };
+		F70728902CF5FAC900B88F59 /* HeroesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707288F2CF5FAB900B88F59 /* HeroesRepositoryProtocol.swift */; };
+		F70728922CF5FB8600B88F59 /* HeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70728912CF5FB7700B88F59 /* HeroesRepository.swift */; };
+		F70728942CF5FDCF00B88F59 /* HeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70728932CF5FDAE00B88F59 /* HeroesUseCase.swift */; };
+		F70728962CF6002500B88F59 /* HeroesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70728952CF6001900B88F59 /* HeroesUseCaseProtocol.swift */; };
+		F70728982CF6027900B88F59 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70728972CF6024000B88F59 /* HeroesViewModel.swift */; };
+		F707289C2CF61FC700B88F59 /* HeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707289A2CF61FC700B88F59 /* HeroesTableViewCell.swift */; };
+		F707289D2CF61FC700B88F59 /* HeroesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F707289B2CF61FC700B88F59 /* HeroesTableViewCell.xib */; };
+		F70728A82CF62B6800B88F59 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F70728A72CF62B6800B88F59 /* Kingfisher */; };
 		F7592B322CF217C1004C8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B2A2CF217C1004C8606 /* AppDelegate.swift */; };
 		F7592B332CF217C1004C8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B2F2CF217C1004C8606 /* SceneDelegate.swift */; };
 		F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7592B2B2CF217C1004C8606 /* Assets.xcassets */; };
@@ -42,6 +54,17 @@
 /* Begin PBXFileReference section */
 		F70728822CF5CB5000B88F59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F70728832CF5CB5000B88F59 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F70728862CF5DE2600B88F59 /* HeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewController.swift; sourceTree = "<group>"; };
+		F70728872CF5DE2600B88F59 /* HeroesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewController.xib; sourceTree = "<group>"; };
+		F707288B2CF5DEF200B88F59 /* HeroesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesNetwork.swift; sourceTree = "<group>"; };
+		F707288D2CF5DF9000B88F59 /* HeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesModel.swift; sourceTree = "<group>"; };
+		F707288F2CF5FAB900B88F59 /* HeroesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		F70728912CF5FB7700B88F59 /* HeroesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesRepository.swift; sourceTree = "<group>"; };
+		F70728932CF5FDAE00B88F59 /* HeroesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCase.swift; sourceTree = "<group>"; };
+		F70728952CF6001900B88F59 /* HeroesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCaseProtocol.swift; sourceTree = "<group>"; };
+		F70728972CF6024000B88F59 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
+		F707289A2CF61FC700B88F59 /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewCell.swift; sourceTree = "<group>"; };
+		F707289B2CF61FC700B88F59 /* HeroesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewCell.xib; sourceTree = "<group>"; };
 		F7592AF62CF216FF004C8606 /* DBHeroes-Reactivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DBHeroes-Reactivo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7592B0C2CF21700004C8606 /* DBHeroes-ReactivoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DBHeroes-ReactivoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7592B2A2CF217C1004C8606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70728A82CF62B6800B88F59 /* Kingfisher in Frameworks */,
 				F7615B742CF49F64003C8F8A /* CombineCocoa in Frameworks */,
 				F7615B722CF49F5E003C8F8A /* KcLibrarySwift1 in Frameworks */,
 			);
@@ -96,6 +120,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F707288A2CF5DE3100B88F59 /* HeroesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F70728992CF61F9D00B88F59 /* Cell */,
+				F70728862CF5DE2600B88F59 /* HeroesTableViewController.swift */,
+				F70728872CF5DE2600B88F59 /* HeroesTableViewController.xib */,
+			);
+			path = HeroesTableView;
+			sourceTree = "<group>";
+		};
+		F70728992CF61F9D00B88F59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F707289A2CF61FC700B88F59 /* HeroesTableViewCell.swift */,
+				F707289B2CF61FC700B88F59 /* HeroesTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F7592AED2CF216FF004C8606 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +216,7 @@
 		F7592B3C2CF2185E004C8606 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F707288A2CF5DE3100B88F59 /* HeroesTableView */,
 				F7615B602CF4951C003C8F8A /* LoginView */,
 			);
 			path = Views;
@@ -181,6 +225,7 @@
 		F7592B3D2CF21865004C8606 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F70728972CF6024000B88F59 /* HeroesViewModel.swift */,
 				F7615B612CF49554003C8F8A /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
@@ -204,6 +249,7 @@
 		F7592B402CF218B4004C8606 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				F70728912CF5FB7700B88F59 /* HeroesRepository.swift */,
 				F7615B832CF4D375003C8F8A /* LoginRepository.swift */,
 			);
 			path = Repositories;
@@ -220,6 +266,8 @@
 		F7592B422CF218CE004C8606 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F70728952CF6001900B88F59 /* HeroesUseCaseProtocol.swift */,
+				F707288F2CF5FAB900B88F59 /* HeroesRepositoryProtocol.swift */,
 				F7615B682CF49767003C8F8A /* LoginRepositoryProtocol.swift */,
 				F7615B662CF496DD003C8F8A /* LoginUseCaseProtocol.swift */,
 			);
@@ -229,6 +277,7 @@
 		F7592B432CF218D7004C8606 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F707288D2CF5DF9000B88F59 /* HeroesModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -236,6 +285,7 @@
 		F7592B442CF218E0004C8606 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				F70728932CF5FDAE00B88F59 /* HeroesUseCase.swift */,
 				F7615B812CF4D2FB003C8F8A /* LoginUseCase.swift */,
 			);
 			path = UseCase;
@@ -262,8 +312,9 @@
 		F7615B632CF495C6003C8F8A /* BaseNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				F7615B7F2CF4C6EC003C8F8A /* AppError.swift */,
 				F7615B772CF4A2C5003C8F8A /* LoginNetwork.swift */,
+				F707288B2CF5DEF200B88F59 /* HeroesNetwork.swift */,
+				F7615B7F2CF4C6EC003C8F8A /* AppError.swift */,
 				F7615B752CF4A0B3003C8F8A /* HTTPMethods.swift */,
 				F7615B642CF495D4003C8F8A /* EndPoints.swift */,
 			);
@@ -296,6 +347,7 @@
 			packageProductDependencies = (
 				F7615B712CF49F5E003C8F8A /* KcLibrarySwift1 */,
 				F7615B732CF49F64003C8F8A /* CombineCocoa */,
+				F70728A72CF62B6800B88F59 /* Kingfisher */,
 			);
 			productName = "DBHeroes-Reactivo";
 			productReference = F7592AF62CF216FF004C8606 /* DBHeroes-Reactivo.app */;
@@ -355,6 +407,7 @@
 			packageReferences = (
 				F7615B6A2CF498E2003C8F8A /* XCRemoteSwiftPackageReference "KcLibrarySwift1" */,
 				F7615B6B2CF49AC0003C8F8A /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				F70728A22CF62A9500B88F59 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F7592AF72CF216FF004C8606 /* Products */;
@@ -375,6 +428,8 @@
 				F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */,
 				F7592B372CF217C1004C8606 /* LaunchScreen.storyboard in Resources */,
 				F7615B552CF473ED003C8F8A /* LoginViewController.xib in Resources */,
+				F70728892CF5DE2600B88F59 /* HeroesTableViewController.xib in Resources */,
+				F707289D2CF61FC700B88F59 /* HeroesTableViewCell.xib in Resources */,
 				F70728852CF5CB5000B88F59 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,20 +448,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F707288E2CF5DF9900B88F59 /* HeroesModel.swift in Sources */,
+				F70728942CF5FDCF00B88F59 /* HeroesUseCase.swift in Sources */,
+				F707289C2CF61FC700B88F59 /* HeroesTableViewCell.swift in Sources */,
 				F7615B762CF4A0BE003C8F8A /* HTTPMethods.swift in Sources */,
 				F7615B842CF4D393003C8F8A /* LoginRepository.swift in Sources */,
 				F7615B782CF4A2D8003C8F8A /* LoginNetwork.swift in Sources */,
 				F7615B622CF49560003C8F8A /* LoginViewModel.swift in Sources */,
+				F70728962CF6002500B88F59 /* HeroesUseCaseProtocol.swift in Sources */,
 				F7615B652CF495DD003C8F8A /* EndPoints.swift in Sources */,
 				F70728842CF5CB5000B88F59 /* HomeViewController.swift in Sources */,
 				F7615B542CF473ED003C8F8A /* LoginViewController.swift in Sources */,
+				F70728982CF6027900B88F59 /* HeroesViewModel.swift in Sources */,
 				F7615B7A2CF4C240003C8F8A /* Constansts.swift in Sources */,
+				F70728922CF5FB8600B88F59 /* HeroesRepository.swift in Sources */,
 				F7615B692CF49774003C8F8A /* LoginRepositoryProtocol.swift in Sources */,
 				F7592B322CF217C1004C8606 /* AppDelegate.swift in Sources */,
+				F70728902CF5FAC900B88F59 /* HeroesRepositoryProtocol.swift in Sources */,
 				F7615B802CF4C6FB003C8F8A /* AppError.swift in Sources */,
 				F7592B332CF217C1004C8606 /* SceneDelegate.swift in Sources */,
 				F7615B672CF496E9003C8F8A /* LoginUseCaseProtocol.swift in Sources */,
 				F7615B822CF4D305003C8F8A /* LoginUseCase.swift in Sources */,
+				F707288C2CF5DEFD00B88F59 /* HeroesNetwork.swift in Sources */,
+				F70728882CF5DE2600B88F59 /* HeroesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +751,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F70728A22CF62A9500B88F59 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.1;
+			};
+		};
 		F7615B6A2CF498E2003C8F8A /* XCRemoteSwiftPackageReference "KcLibrarySwift1" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dhp85/KcLibrarySwift1";
@@ -706,6 +778,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F70728A72CF62B6800B88F59 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F70728A22CF62A9500B88F59 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		F7615B712CF49F5E003C8F8A /* KcLibrarySwift1 */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7615B6A2CF498E2003C8F8A /* XCRemoteSwiftPackageReference "KcLibrarySwift1" */;

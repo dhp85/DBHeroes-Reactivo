@@ -16,7 +16,7 @@ final class DefaultLoginRepository: LoginRepositoryProtocol {
         self.network = network
     }
     
-    func login(user: String, password: String) async -> String {
-        return await network.login(username: user, password: password)
+    func login(user: String, password: String) async throws -> String {
+        return try await network.login(username: user, password: password)
     }
 }

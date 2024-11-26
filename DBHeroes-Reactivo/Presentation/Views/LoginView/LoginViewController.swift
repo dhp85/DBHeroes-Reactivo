@@ -98,15 +98,12 @@ class LoginViewController: UIViewController {
             print("None")
         case .success:
             activityIndacator.startAnimating()
-            let HomeviewController = HomeViewController()
+            let HomeviewController = HeroesTableViewController(viewModel: HeroesViewModel())
             let navigationController = UINavigationController(rootViewController: HomeviewController)
             navigationController.modalPresentationStyle = .fullScreen
             present(navigationController, animated: true, completion: nil)
         case .error:
-            showAlert(title: "Error", message: "Login failed")
-        
-        case .notValidate:
-            return showAlert(title: "Error", message: "Invalid email or password")
+            showAlert(title: "Error", message: "Usuario o contraseña incorrectos")
         }
     }
     
