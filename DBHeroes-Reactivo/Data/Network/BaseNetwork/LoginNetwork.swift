@@ -1,0 +1,42 @@
+//
+//  LoginNetwork.swift
+//  DBHeroes-Reactivo
+//
+//  Created by Diego Herreros Parron on 25/11/24.
+//
+import Foundation
+
+protocol LoginNetworkprotocol {
+    func login(username: String, password: String) async -> String
+}
+
+
+final class LoginNetwork: LoginNetworkprotocol {
+    func login(username: String, password: String) async -> String {
+        
+        var token: String = ""
+        let loginString = "\(username):\(password)"
+        guard let loginData = loginString.data(using: .utf8)?.base64EncodedString() else { return AppError.notConversionString.description }
+        
+        let stringUrl = "\(CONST_URL_SECRET)\(EndPoints.login.rawValue)"
+        
+        var request = URLRequest(url: URL(string: stringUrl)!)
+        request.httpMethod = HTTPMethods.post
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
+        request.addValue("Basic \(loginData)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            if let resp = response as? HTTPURLResponse,
+               resp.statusCode == 200 {
+                token = String(decoding: data, as: UTF8.self)
+                
+            }
+        } catch {
+            return AppError.errorTokenMissing.description
+        }
+        
+        return token
+    }
+    
+}

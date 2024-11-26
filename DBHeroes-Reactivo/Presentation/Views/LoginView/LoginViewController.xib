@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DBHeroes_Reactivo" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndacator" destination="cU1-yo-2by" id="9vf-JH-Q1s"/>
+                <outlet property="loginButton" destination="o78-2y-Uzv" id="6PS-yg-Yo0"/>
                 <outlet property="password" destination="Sd2-3l-y5V" id="sow-76-WYL"/>
                 <outlet property="userName" destination="jbO-Jm-a2O" id="Kt5-FZ-r7V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -56,9 +57,6 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Iniciar Sesión" cornerStyle="capsule"/>
-                            <connections>
-                                <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="dbC-pd-pi5"/>
-                            </connections>
                         </button>
                     </subviews>
                     <constraints>
