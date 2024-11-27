@@ -19,8 +19,8 @@ final class HeroesNetwork: HeroesNetworkProtocol {
         let url: String = "\(CONST_URL_SECRET)\(EndPoints.heros.rawValue)"
         var request: URLRequest = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethods.post
-        request.httpBody = try? JSONEncoder().encode(heroes)
-        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
+        request.httpBody = try? JSONEncoder().encode(HeroModelRequest(name: heroes))
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-Type")
         
         let token = KeyChainKc().loadKC(key: CONST_TOKEN_ID_KEYCHAIN)
         if let tokenJwt = token {

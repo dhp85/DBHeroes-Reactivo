@@ -11,6 +11,7 @@ enum LoginStatus {
     case none
     case success
     case error
+    case loading
 }
 
 class LoginViewModel: ObservableObject {
@@ -23,6 +24,7 @@ class LoginViewModel: ObservableObject {
     
     func login(username: String, password: String) {
         Task {
+            self.statusLogin = .loading
             if (try await loginUseCase.login(user: username, password: password)) {
                 self.statusLogin = .success
             } else {

@@ -24,13 +24,19 @@ class HeroesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureimage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func configureimage(){
+        heroImage.layer.cornerRadius = heroImage.frame.size.width / 2
+        heroImage.layer.masksToBounds = true
+        heroImage.contentMode = .scaleAspectFill
     }
     
 }

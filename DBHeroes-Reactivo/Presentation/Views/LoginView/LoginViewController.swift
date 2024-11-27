@@ -96,13 +96,15 @@ class LoginViewController: UIViewController {
         switch status {
         case .none:
             print("None")
-        case .success:
+        case .loading:
             activityIndacator.startAnimating()
+        case .success:
             let HomeviewController = HeroesTableViewController(viewModel: HeroesViewModel())
             let navigationController = UINavigationController(rootViewController: HomeviewController)
             navigationController.modalPresentationStyle = .fullScreen
             present(navigationController, animated: true, completion: nil)
         case .error:
+            activityIndacator.stopAnimating()
             showAlert(title: "Error", message: "Usuario o contraseña incorrectos")
         }
     }

@@ -21,6 +21,7 @@
 		F707289C2CF61FC700B88F59 /* HeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707289A2CF61FC700B88F59 /* HeroesTableViewCell.swift */; };
 		F707289D2CF61FC700B88F59 /* HeroesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F707289B2CF61FC700B88F59 /* HeroesTableViewCell.xib */; };
 		F70728A82CF62B6800B88F59 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F70728A72CF62B6800B88F59 /* Kingfisher */; };
+		F72161FC2CF737BF004B08CA /* Heros.json in Resources */ = {isa = PBXBuildFile; fileRef = F72161FB2CF737BF004B08CA /* Heros.json */; };
 		F7592B322CF217C1004C8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B2A2CF217C1004C8606 /* AppDelegate.swift */; };
 		F7592B332CF217C1004C8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7592B2F2CF217C1004C8606 /* SceneDelegate.swift */; };
 		F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7592B2B2CF217C1004C8606 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		F70728972CF6024000B88F59 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
 		F707289A2CF61FC700B88F59 /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewCell.swift; sourceTree = "<group>"; };
 		F707289B2CF61FC700B88F59 /* HeroesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewCell.xib; sourceTree = "<group>"; };
+		F72161FB2CF737BF004B08CA /* Heros.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Heros.json; sourceTree = "<group>"; };
 		F7592AF62CF216FF004C8606 /* DBHeroes-Reactivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DBHeroes-Reactivo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7592B0C2CF21700004C8606 /* DBHeroes-ReactivoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DBHeroes-ReactivoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7592B2A2CF217C1004C8606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				F70728992CF61F9D00B88F59 /* Cell */,
 				F70728862CF5DE2600B88F59 /* HeroesTableViewController.swift */,
 				F70728872CF5DE2600B88F59 /* HeroesTableViewController.xib */,
+				F72161FB2CF737BF004B08CA /* Heros.json */,
 			);
 			path = HeroesTableView;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				F7615B552CF473ED003C8F8A /* LoginViewController.xib in Resources */,
 				F70728892CF5DE2600B88F59 /* HeroesTableViewController.xib in Resources */,
 				F707289D2CF61FC700B88F59 /* HeroesTableViewCell.xib in Resources */,
+				F72161FC2CF737BF004B08CA /* Heros.json in Resources */,
 				F70728852CF5CB5000B88F59 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,3 +12,7 @@ struct HeroesModel: Codable {
     let description, id, name: String
     let photo: String?
 }
+
+struct HeroModelRequest: Codable {
+    let name: String
+}

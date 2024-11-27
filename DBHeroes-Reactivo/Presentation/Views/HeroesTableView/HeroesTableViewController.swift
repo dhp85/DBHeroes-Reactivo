@@ -32,6 +32,9 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "HeroesTableViewCell", bundle: nil), forCellReuseIdentifier: HeroesTableViewCell.identifier)
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged)
+        
         self.title = "Heroes"
         self.bindingUI()
         
@@ -40,10 +43,21 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
     private func bindingUI() {
         self.viewModel.$heroesList
             .receive(on: DispatchQueue.main)
-            .sink{ data in
-                self.tableView.reloadData()
+            .sink{ [weak self] data in
+                self?.tableView.reloadData()
+                self?.tableView.refreshControl?.endRefreshing()
             }
-            .store(in: &suscriptions)
+            .store(in: &self.suscriptions)
+    }
+    
+    @objc func callPullToRefresh() {
+        Task {
+            do {
+                   try await self.viewModel.getHeroes()
+               } catch {
+                   print("Error al obtener los héroes: \(error)")
+               }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,6 +78,10 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
             cell.heroImage.kf.setImage(with: URL(string: image))
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
     }
  
 
