@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransformationModel: Codable {
+struct TransformationModel: Codable, Hashable {
     let name, id: String
         let photo: String?
         let description: String

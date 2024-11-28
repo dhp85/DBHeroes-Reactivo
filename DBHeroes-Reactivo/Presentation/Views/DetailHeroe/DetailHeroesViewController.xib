@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-35-WZC">
-                            <rect key="frame" x="16" y="16" width="361" height="544.33333333333337"/>
+                            <rect key="frame" x="16" y="16" width="361" height="592.33333333333337"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4m7-SV-5jg">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="260"/>
@@ -57,10 +57,10 @@
                                     </subviews>
                                 </stackView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-q9-y5T">
-                                    <rect key="frame" x="0.0" y="344.33333333333331" width="361" height="199.99999999999994"/>
+                                    <rect key="frame" x="0.0" y="344.33333333333331" width="361" height="247.99999999999994"/>
                                     <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="ddJ-ti-679"/>
+                                        <constraint firstAttribute="height" constant="248" id="ddJ-ti-679"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u6H-aL-71d">
                                         <size key="itemSize" width="128" height="128"/>

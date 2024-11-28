@@ -28,4 +28,9 @@ final class DetailHeroesViewModel: ObservableObject {
             self.transformation = data
         }
     }
+    
+    func clearTransformations() {
+        self.transformation = [] 
+
+    }
 }

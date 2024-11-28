@@ -35,54 +35,63 @@ final class DetailHeroesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindUI()
         configureCollectionView()
         configureView()
+        bindUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        clearView()
     }
     
     private func bindUI() {
-        // Combina ambos publicadores usando combineLatest, sin mapear sus valores
-        Publishers.CombineLatest(viewModel.$hero, viewModel.$transformation)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] hero, transformation in
-                self?.updateUI(hero: hero, transformation: transformation) // Actualizar UI con ambos valores
-            }
-            .store(in: &suscriptions)
-    }
-
-    // Función para actualizar la interfaz con los nuevos valores de hero y transformation
-    private func updateUI(hero: HeroesModel, transformation: [TransformationModel]) {
-        
-        if let imageUrl = hero.photo {
-            heroImage.kf.setImage(with: URL(string: imageUrl))
-        } else {
-            heroImage.image = nil
-        }
-
-       
-        descriptionHero.text = hero.description
-        collectionView.reloadData()
-        
-        if transformation.isEmpty {
-            labelTransformation.isHidden = true
-            collectionView.isHidden = true
-        } else {
-            labelTransformation.isHidden = false
-            collectionView.isHidden = false
-        }
-    }
+           viewModel.$hero
+               .receive(on: DispatchQueue.main)
+               .sink { [weak self] hero in
+                   if let image = hero.photo {
+                       self?.heroImage.kf.setImage(with: URL(string: image))
+                   } else {
+                       self?.heroImage.image = nil
+                   }
+                   self?.descriptionHero.text = hero.description
+               }
+               .store(in: &suscriptions)
+           
+           viewModel.$transformation
+               .receive(on: DispatchQueue.main)
+               .sink { [weak self] transformation in
+                   if !transformation.isEmpty {
+                       self?.collectionView.isHidden = false
+                       self?.labelTransformation.isHidden = false
+                       self?.collectionView.reloadData()
+                   } else {
+                       self?.collectionView.isHidden = true
+                       self?.labelTransformation.isHidden = true
+                   }
+                   
+               }
+               .store(in: &suscriptions)
+       }
     
     private func configureCollectionView() {
         collectionView.delegate = self
-        collectionView.dataSource = self
         collectionView.register(UINib(nibName: CollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        collectionView.dataSource = self
+
     }
     
     private func configureView() {
         self.title = viewModel.hero.name
         heroImage.layer.cornerRadius = 20
-        heroImage.layer.borderColor = UIColor.black.cgColor  // Establecer el color del contorno
-        heroImage.layer.borderWidth = 2.0  //
+        heroImage.layer.borderColor = UIColor.black.cgColor  
+        heroImage.layer.borderWidth = 2.0
+    }
+    
+    func clearView() {
+        viewModel.clearTransformations()
+        KingfisherManager.shared.cache.clearMemoryCache()
+        collectionView.reloadData()
     }
 }
 
@@ -107,6 +116,6 @@ extension DetailHeroesViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 160)
+        return CGSize(width: 200, height: 200)
     }
 }
