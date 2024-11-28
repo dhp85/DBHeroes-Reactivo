@@ -14,7 +14,7 @@ enum LoginStatus {
     case loading
 }
 
-class LoginViewModel: ObservableObject {
+final class LoginViewModel: ObservableObject {
     @Published var statusLogin: LoginStatus = .none
     private var loginUseCase: LoginUseCaseProtocol
     
@@ -28,7 +28,7 @@ class LoginViewModel: ObservableObject {
             if (try await loginUseCase.login(user: username, password: password)) {
                 self.statusLogin = .success
             } else {
-                self.self .statusLogin = .error
+                self.statusLogin = .error
             }
         }
     }

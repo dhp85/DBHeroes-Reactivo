@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HeroesModel: Codable {
+struct HeroesModel: Codable, Hashable {
     let favorite: Bool
     let description, id, name: String
     let photo: String?

@@ -19,17 +19,10 @@ final class HeroesViewModel: ObservableObject {
     }
     
     func getHeroes() async throws{
-        var data = try await useCaseHeroes.getHeroes(heroes: "")
-        
-        if !data.isEmpty {
-            data.sort { $0.name < $1.name }
-        }
-        
-        let sortedHeroes = data
+        let data = try await useCaseHeroes.getHeroes(heroes: "")
         
         DispatchQueue.main.async {
-            self.heroesList = sortedHeroes
+            self.heroesList = data
         }
-        
     }
 }

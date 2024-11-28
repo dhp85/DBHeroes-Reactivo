@@ -10,13 +10,13 @@ import Combine
 import Kingfisher
 
 
-class HeroesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class HeroesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
     
     @IBOutlet weak var tableView: UITableView!
     
     private var viewModel: HeroesViewModel
-    var suscriptions = Set<AnyCancellable>()
+    private var suscriptions = Set<AnyCancellable>()
     
     init(viewModel: HeroesViewModel) {
         self.viewModel = viewModel
@@ -34,7 +34,6 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.register(UINib(nibName: "HeroesTableViewCell", bundle: nil), forCellReuseIdentifier: HeroesTableViewCell.identifier)
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged)
-        
         self.title = "Heroes"
         self.bindingUI()
         
@@ -70,6 +69,8 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HeroesTableViewCell.identifier, for: indexPath) as! HeroesTableViewCell
+        
+        
         let hero = viewModel.heroesList[indexPath.row]
         cell.nameHero.text = hero.name
         cell.descriptionHero.text = hero.description
@@ -83,6 +84,14 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150
     }
- 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if viewModel.heroesList.count > indexPath.row {
+            let hero = viewModel.heroesList[indexPath.row]
+            let detailViewModel = DetailHeroesViewModel(hero: hero)
+            let detailViewController = DetailHeroesViewController(viewModel: detailViewModel)
+            navigationController?.pushViewController(detailViewController, animated: true)
+            
+        }
+    }
 
 }

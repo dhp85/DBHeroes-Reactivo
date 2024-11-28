@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeroesTableViewCell: UITableViewCell {
+final class HeroesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var heroImage: UIImageView!
     
@@ -35,6 +35,8 @@ class HeroesTableViewCell: UITableViewCell {
     
     private func configureimage(){
         heroImage.layer.cornerRadius = heroImage.frame.size.width / 2
+        heroImage.layer.borderColor = UIColor.black.cgColor  
+        heroImage.layer.borderWidth = 2.0  //
         heroImage.layer.masksToBounds = true
         heroImage.contentMode = .scaleAspectFill
     }

@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import CombineCocoa
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var activityIndacator: UIActivityIndicatorView!

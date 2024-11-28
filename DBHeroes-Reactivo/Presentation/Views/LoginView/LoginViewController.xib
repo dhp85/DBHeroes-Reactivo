@@ -69,9 +69,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="zQK-vk-i2D" firstAttribute="top" secondItem="cU1-yo-2by" secondAttribute="bottom" constant="41" id="2Tg-TK-Zom"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JRd-Rn-Oec" secondAttribute="trailing" id="AA4-Od-cxa"/>
+                <constraint firstAttribute="trailing" secondItem="JRd-Rn-Oec" secondAttribute="trailing" id="AA4-Od-cxa"/>
                 <constraint firstItem="zQK-vk-i2D" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EEk-PE-wPX"/>
-                <constraint firstItem="JRd-Rn-Oec" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OKg-SR-G4x"/>
+                <constraint firstItem="JRd-Rn-Oec" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OKg-SR-G4x"/>
                 <constraint firstAttribute="bottom" secondItem="JRd-Rn-Oec" secondAttribute="bottom" id="RK2-oA-inr"/>
                 <constraint firstItem="zQK-vk-i2D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZMg-Pa-Igq"/>
                 <constraint firstItem="JRd-Rn-Oec" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cU0-nd-Apm"/>
