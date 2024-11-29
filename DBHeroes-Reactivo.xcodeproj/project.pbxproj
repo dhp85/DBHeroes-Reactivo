@@ -48,6 +48,8 @@
 		F7615B802CF4C6FB003C8F8A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7615B7F2CF4C6EC003C8F8A /* AppError.swift */; };
 		F7615B822CF4D305003C8F8A /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7615B812CF4D2FB003C8F8A /* LoginUseCase.swift */; };
 		F7615B842CF4D393003C8F8A /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7615B832CF4D375003C8F8A /* LoginRepository.swift */; };
+		F7DA85212CF9B0E800860768 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7DA851F2CF9B0E800860768 /* Localizable.strings */; };
+		F7DA85222CF9B0E800860768 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7DA851F2CF9B0E800860768 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,9 @@
 		F7615B7F2CF4C6EC003C8F8A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F7615B812CF4D2FB003C8F8A /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		F7615B832CF4D375003C8F8A /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		F7DA85202CF9B0E800860768 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F7DA85232CF9B13700860768 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F7DA85242CF9B14A00860768 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -179,6 +184,7 @@
 		F7592AED2CF216FF004C8606 = {
 			isa = PBXGroup;
 			children = (
+				F7DA851F2CF9B0E800860768 /* Localizable.strings */,
 				F7592B312CF217C1004C8606 /* DBHeroes-Reactivo */,
 				F7592B0F2CF21700004C8606 /* DBHeroes-ReactivoTests */,
 				F7592B192CF21700004C8606 /* DBHeroes-ReactivoUITests */,
@@ -444,6 +450,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = F7592AED2CF216FF004C8606;
 			minimizedProjectReferenceProxies = 1;
@@ -473,6 +480,7 @@
 				F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */,
 				F7592B372CF217C1004C8606 /* LaunchScreen.storyboard in Resources */,
 				F7615B552CF473ED003C8F8A /* LoginViewController.xib in Resources */,
+				F7DA85222CF9B0E800860768 /* Localizable.strings in Resources */,
 				F70728892CF5DE2600B88F59 /* HeroesTableViewController.xib in Resources */,
 				F707289D2CF61FC700B88F59 /* HeroesTableViewCell.xib in Resources */,
 			);
@@ -482,6 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DA85212CF9B0E800860768 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,8 +557,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				F7592B2D2CF217C1004C8606 /* Base */,
+				F7DA85232CF9B13700860768 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F7DA851F2CF9B0E800860768 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7DA85202CF9B0E800860768 /* en */,
+				F7DA85242CF9B14A00860768 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -620,6 +639,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -683,6 +703,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

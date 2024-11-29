@@ -78,7 +78,6 @@ final class DetailHeroesViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: CollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.dataSource = self
-
     }
     
     private func configureView() {
@@ -89,7 +88,7 @@ final class DetailHeroesViewController: UIViewController {
     }
     
     func clearView() {
-        viewModel.clearTransformations()
+        self.viewModel.transformation.removeAll()
         KingfisherManager.shared.cache.clearMemoryCache()
         collectionView.reloadData()
     }

@@ -8,14 +8,16 @@
 import Foundation
 
 final class DetailUseCase: DetailUseCaseProtocol {
+   
+    
     var repo: DetailHeroesRepositoryProtocol
     
     init(repo: DetailHeroesRepositoryProtocol = HeroesDetailRepository(network: DetailNetwork())) {
         self.repo = repo
     }
     
-    func getTransformations(id: String) async throws -> [TransformationModel] {
-        return try await repo.getTransformations(id: id)
+    func gettransformations(id: String) async throws -> [TransformationModel] {
+        return try await repo.gettransformations(id: id)
     }
     
     

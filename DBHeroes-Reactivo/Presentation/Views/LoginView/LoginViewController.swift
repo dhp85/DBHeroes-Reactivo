@@ -32,6 +32,7 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configLenguage()
         bindViewModel()
         bindingUI()
     }
@@ -77,10 +78,16 @@ final class LoginViewController: UIViewController {
                        let pass = self?.pass, !pass.isEmpty {
                         self?.viwModel?.login(username: user, password: pass)
                     } else {
-                        self?.showAlert(title: "Error", message: "Contraseña vacia.")
+                        self?.showAlert(titleKey: "Error", messageKey: "Contraseña vacia")
                     }
                 }).store(in: &subscriptions)
         }
+    }
+    
+    func configLenguage() {
+        loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
+        userName.placeholder = NSLocalizedString("Email", comment: "")
+        password.placeholder = NSLocalizedString("Password", comment: "")
     }
     
     func bindViewModel() {
@@ -105,14 +112,23 @@ final class LoginViewController: UIViewController {
             present(navigationController, animated: true, completion: nil)
         case .error:
             activityIndacator.stopAnimating()
-            showAlert(title: "Error", message: "Usuario o contraseña incorrectos")
+            showAlert(titleKey: "Error", messageKey: "Usuario o contraseña incorrectos")
         }
     }
     
-    func showAlert(title: String, message: String) {
+    /*func showAlert(title: String, message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }*/
+    func showAlert(titleKey: String, messageKey: String) {
+        let title = NSLocalizedString(titleKey, comment: "")
+        let message = NSLocalizedString(messageKey, comment: "")
+        let okButtonTitle = NSLocalizedString("OK", comment: "OK button text")
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okButtonTitle, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

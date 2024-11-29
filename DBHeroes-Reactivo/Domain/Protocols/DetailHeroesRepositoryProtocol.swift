@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DetailHeroesRepositoryProtocol {
-    func getTransformations(id: String) async throws -> [TransformationModel]
+    func gettransformations(id: String) async throws -> [TransformationModel]
 }

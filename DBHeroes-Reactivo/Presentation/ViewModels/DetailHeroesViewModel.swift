@@ -22,15 +22,10 @@ final class DetailHeroesViewModel: ObservableObject {
     
     func gettransformations() async throws {
         
-        let data = try await useCase.getTransformations(id: hero.id)
+        let data = try await useCase.gettransformations(id: hero.id)
         
         DispatchQueue.main.async {
             self.transformation = data
         }
-    }
-    
-    func clearTransformations() {
-        self.transformation = [] 
-
     }
 }

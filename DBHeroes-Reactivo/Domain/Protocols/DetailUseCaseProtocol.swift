@@ -9,5 +9,8 @@ import Foundation
 
 protocol DetailUseCaseProtocol {
     var repo: DetailHeroesRepositoryProtocol { get set }
-    func getTransformations(id:String) async throws -> [TransformationModel]
+    func gettransformations(id:String) async throws -> [TransformationModel]
+}
+    func clearTransformations() {
+    
 }

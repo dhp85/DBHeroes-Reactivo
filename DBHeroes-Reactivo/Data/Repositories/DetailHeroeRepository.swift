@@ -15,7 +15,7 @@ final class HeroesDetailRepository: DetailHeroesRepositoryProtocol {
         self.network = network
     }
     
-    func getTransformations(id: String) async throws -> [TransformationModel] {
+    func gettransformations(id: String) async throws -> [TransformationModel] {
         return try await network.getTransformations(id: id)
     }
 }

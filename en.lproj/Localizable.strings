@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  DBHeroes-Reactivo
+
+  Created by Diego Herreros Parron on 29/11/24.
+  
+*/
+
+"Correo Electrónico" = "Email";
+"Contraseña" = "Password";
+"Iniciar Sesión" = "Login";
+"Contraseña vacia" = "Empty Password";
+"Usuario o contraseña incorrectos" = "Incorrect username or password";
+"Error" = "Error";
+"Aceptar" = "OK";
+
+
