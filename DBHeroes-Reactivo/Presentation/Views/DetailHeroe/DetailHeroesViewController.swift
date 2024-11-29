@@ -9,21 +9,25 @@ import UIKit
 import Combine
 import Kingfisher
 
+// MARK: - Enums
 enum SectionsTransformation {
     case main
 }
 
+// MARK: - DetailHeroesViewController
 final class DetailHeroesViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var heroImage: UIImageView!
-    
     @IBOutlet weak var labelTransformation: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var descriptionHero: UILabel!
     
+    // MARK: - Properties
     private var viewModel: DetailHeroesViewModel
     private var suscriptions = Set<AnyCancellable>()
     
+    // MARK: - Initializers
     init(viewModel: DetailHeroesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -33,6 +37,7 @@ final class DetailHeroesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -45,35 +50,33 @@ final class DetailHeroesViewController: UIViewController {
         clearView()
     }
     
+    // MARK: - Binding Methods
     private func bindUI() {
-           viewModel.$hero
-               .receive(on: DispatchQueue.main)
-               .sink { [weak self] hero in
-                   if let image = hero.photo {
-                       self?.heroImage.kf.setImage(with: URL(string: image))
-                   } else {
-                       self?.heroImage.image = nil
-                   }
-                   self?.descriptionHero.text = hero.description
-               }
-               .store(in: &suscriptions)
-           
-           viewModel.$transformation
-               .receive(on: DispatchQueue.main)
-               .sink { [weak self] transformation in
-                   if !transformation.isEmpty {
-                       self?.collectionView.isHidden = false
-                       self?.labelTransformation.isHidden = false
-                       self?.collectionView.reloadData()
-                   } else {
-                       self?.collectionView.isHidden = true
-                       self?.labelTransformation.isHidden = true
-                   }
-                   
-               }
-               .store(in: &suscriptions)
-       }
+        Publishers.CombineLatest(viewModel.$hero, viewModel.$transformation)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] (hero, transformation) in
+                // Configurar la imagen del héroe
+                if let image = hero.photo {
+                    self?.heroImage.kf.setImage(with: URL(string: image))
+                } else {
+                    self?.heroImage.image = nil
+                }
+                self?.descriptionHero.text = hero.description
+
+                // Mostrar/ocultar elementos según la transformación
+                if !transformation.isEmpty {
+                    self?.collectionView.isHidden = false
+                    self?.labelTransformation.isHidden = false
+                    self?.collectionView.reloadData()
+                } else {
+                    self?.collectionView.isHidden = true
+                    self?.labelTransformation.isHidden = true
+                }
+            }
+            .store(in: &suscriptions)
+    }
     
+    // MARK: - Configuration Methods
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: CollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
@@ -83,10 +86,11 @@ final class DetailHeroesViewController: UIViewController {
     private func configureView() {
         self.title = viewModel.hero.name
         heroImage.layer.cornerRadius = 20
-        heroImage.layer.borderColor = UIColor.black.cgColor  
+        heroImage.layer.borderColor = UIColor.black.cgColor
         heroImage.layer.borderWidth = 2.0
     }
     
+    // MARK: - Helper Methods
     func clearView() {
         self.viewModel.transformation.removeAll()
         KingfisherManager.shared.cache.clearMemoryCache()
@@ -94,7 +98,10 @@ final class DetailHeroesViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 extension DetailHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // MARK: - UICollectionViewDataSource Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.transformation.count
     }
@@ -114,7 +121,8 @@ extension DetailHeroesViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    // MARK: - UICollectionViewDelegateFlowLayout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 232, height: 232)
     }
 }

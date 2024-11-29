@@ -19,3 +19,18 @@ final class HeroesDetailRepository: DetailHeroesRepositoryProtocol {
         return try await network.getTransformations(id: id)
     }
 }
+
+
+final class HeroesDetailRepositoryFake: DetailHeroesRepositoryProtocol {
+    
+    private var network: DetailNetworkProtocol
+    
+    init(network: DetailNetworkProtocol = NetworkDetailFake()) {
+        self.network = network
+    }
+    
+    func gettransformations(id: String) async throws -> [TransformationModel] {
+        return try await network.getTransformations(id: id)
+    }
+}
+

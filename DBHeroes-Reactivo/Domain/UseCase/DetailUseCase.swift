@@ -22,3 +22,17 @@ final class DetailUseCase: DetailUseCaseProtocol {
     
     
 }
+
+final class DetailUseCaseFake: DetailUseCaseProtocol {
+ 
+    
+    var repo: DetailHeroesRepositoryProtocol
+    
+    init(repo: DetailHeroesRepositoryProtocol = HeroesDetailRepository(network: NetworkDetailFake())) {
+        self.repo = repo
+    }
+    
+    func gettransformations(id: String) async throws -> [TransformationModel] {
+        return try await repo.gettransformations(id: id)
+    }
+}

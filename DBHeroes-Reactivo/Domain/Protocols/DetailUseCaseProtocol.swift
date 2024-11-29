@@ -11,6 +11,3 @@ protocol DetailUseCaseProtocol {
     var repo: DetailHeroesRepositoryProtocol { get set }
     func gettransformations(id:String) async throws -> [TransformationModel]
 }
-    func clearTransformations() {
-    
-}

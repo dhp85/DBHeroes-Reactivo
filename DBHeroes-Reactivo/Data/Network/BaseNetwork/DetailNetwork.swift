@@ -45,5 +45,27 @@ final class DetailNetwork: DetailNetworkProtocol {
 }
 
 
+final class NetworkDetailFake: DetailNetworkProtocol {
+    func getTransformations(id: String) async throws -> [TransformationModel] {
+        return getTranformationFromJson()
+    }
+    
+}
+
+func getTranformationFromJson() -> [TransformationModel] {
+    if let url = Bundle.main.url(forResource: "Transformations", withExtension: "json") {
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let jsonData = try decoder.decode([TransformationModel].self, from: data)
+            return jsonData
+        } catch {
+            print("error:\(error)")
+        }
+    }
+    return []
+}
+
+
 
 

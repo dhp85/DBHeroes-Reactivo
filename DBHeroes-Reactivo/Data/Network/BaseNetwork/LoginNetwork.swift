@@ -27,17 +27,23 @@ final class LoginNetwork: LoginNetworkprotocol {
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            if let resp = response as? HTTPURLResponse,
-               resp.statusCode == 200 {
-                token = String(decoding: data, as: UTF8.self)
-                
-            }
-        } catch {
-            throw AppError.errorTokenMissing
             
+            let resp = response as? HTTPURLResponse
+                // Verificar si el código de estado es 200
+            if resp?.statusCode == 200 {
+                    token = String(decoding: data, as: UTF8.self)
+                }
+           } catch {
+            throw AppError.errorTokenMissing
         }
         
         return token
     }
     
+}
+
+final class NetworkLoginFake: LoginNetworkprotocol {
+    func login(username: String, password: String) async throws -> String {
+        return UUID().uuidString
+    }
 }

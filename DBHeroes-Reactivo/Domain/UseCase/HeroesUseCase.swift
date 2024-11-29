@@ -18,3 +18,18 @@ final class HeroesUseCase: HeroesUseCaseProtocol {
         return try await repo.getHeroes(heroes: heroes)
     }
 }
+
+
+final class HeroesUseCaseFake: HeroesUseCaseProtocol {
+    var repo: HeroesRepositoryProtocol
+    
+    init(repo: HeroesRepositoryProtocol = HeroesRepository(network: NetworkHerosFake())) {
+        self.repo = repo
+    }
+    
+    func getHeroes(heroes: String) async throws -> [HeroesModel] {
+        return try await repo.getHeroes(heroes: heroes)
+    }
+    
+    
+}

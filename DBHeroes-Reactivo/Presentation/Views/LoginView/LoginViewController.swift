@@ -11,16 +11,20 @@ import Combine
 import CombineCocoa
 
 final class LoginViewController: UIViewController {
+    
+    // MARK: - Outlets
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var activityIndacator: UIActivityIndicatorView!
     @IBOutlet weak var loginButton: UIButton!
     
+    // MARK: - Properties
     private var viwModel: LoginViewModel?
     private var user: String = ""
     private var pass: String = ""
     private var subscriptions = Set<AnyCancellable>()
     
+    // MARK: - Initializers
     init(viewModel: LoginViewModel) {
         self.viwModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -30,6 +34,7 @@ final class LoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configLenguage()
@@ -37,59 +42,51 @@ final class LoginViewController: UIViewController {
         bindingUI()
     }
     
+    // MARK: - UI Bindings
     func bindingUI() {
-        if let userName = self.userName {
-            userName.textPublisher
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] data in
-                    if let usr = data {
-                        print("Text user: \(usr)")
-                        self?.user = usr
-                        
-                        if let button = self?.loginButton {
-                            if (self?.user.count)! >= 5 {
-                                button.isEnabled = true
-                            } else {
-                                button.isEnabled = false
-                            }
-                        }
-                    }
-                }
-                .store(in: &subscriptions)
-        }
+        // Bind username text field
+        self.userName?.textPublisher
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] userName in
+                print("Text user: \(userName)")
+                self?.user = userName
+                self?.loginButton?.isEnabled = userName.count >= 5
+            }
+            .store(in: &subscriptions)
         
-        if let password = self.password {
-            password.textPublisher
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] data in
-                    if let pwd = data {
-                        print("Text password: \(pwd)")
-                        self?.pass = pwd
-                    }
-                }
-                .store(in: &subscriptions)
-        }
+        // Bind password text field
+        self.password?.textPublisher
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                print("Text password: \(data)")
+                self?.pass = data
+            }
+            .store(in: &subscriptions)
         
-        if let button = self.loginButton {
-            button.tapPublisher
-                .receive(on: DispatchQueue.main)
-                .sink(receiveValue: { [weak self] _ in
-                    if let user = self?.user,
-                       let pass = self?.pass, !pass.isEmpty {
-                        self?.viwModel?.login(username: user, password: pass)
-                    } else {
-                        self?.showAlert(titleKey: "Error", messageKey: "Contraseña vacia")
-                    }
-                }).store(in: &subscriptions)
-        }
+        // Bind login button tap
+        self.loginButton?.tapPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] _ in
+                guard let user = self?.user,
+                      let pass = self?.pass, !pass.isEmpty else {
+                    self?.showAlert(titleKey: "Error", messageKey: "Contraseña vacia")
+                    return
+                }
+                self?.viwModel?.login(username: user, password: pass)
+            })
+            .store(in: &subscriptions)
     }
     
+    // MARK: - Language Configuration
     func configLenguage() {
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
         userName.placeholder = NSLocalizedString("Email", comment: "")
         password.placeholder = NSLocalizedString("Password", comment: "")
     }
     
+    // MARK: - ViewModel Binding
     func bindViewModel() {
         viwModel?.$statusLogin
             .receive(on: DispatchQueue.main)
@@ -99,6 +96,7 @@ final class LoginViewController: UIViewController {
             .store(in: &subscriptions)
     }
     
+    // MARK: - Handling Login Status
     private func handleLoginStatus(_ status: LoginStatus) {
         switch status {
         case .none:
@@ -106,30 +104,29 @@ final class LoginViewController: UIViewController {
         case .loading:
             activityIndacator.startAnimating()
         case .success:
-            let HomeviewController = HeroesTableViewController(viewModel: HeroesViewModel())
-            let navigationController = UINavigationController(rootViewController: HomeviewController)
-            navigationController.modalPresentationStyle = .fullScreen
-            present(navigationController, animated: true, completion: nil)
+            navigateToHome()
         case .error:
             activityIndacator.stopAnimating()
             showAlert(titleKey: "Error", messageKey: "Usuario o contraseña incorrectos")
         }
     }
     
-    /*func showAlert(title: String, message: String) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }*/
+    // MARK: - Navigation
+    private func navigateToHome() {
+        let homeViewController = HeroesTableViewController(viewModel: HeroesViewModel())
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Alert Presentation
     func showAlert(titleKey: String, messageKey: String) {
         let title = NSLocalizedString(titleKey, comment: "")
         let message = NSLocalizedString(messageKey, comment: "")
         let okButtonTitle = NSLocalizedString("OK", comment: "OK button text")
-
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okButtonTitle, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
 }

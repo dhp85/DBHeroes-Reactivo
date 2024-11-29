@@ -50,6 +50,11 @@
 		F7615B842CF4D393003C8F8A /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7615B832CF4D375003C8F8A /* LoginRepository.swift */; };
 		F7DA85212CF9B0E800860768 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7DA851F2CF9B0E800860768 /* Localizable.strings */; };
 		F7DA85222CF9B0E800860768 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7DA851F2CF9B0E800860768 /* Localizable.strings */; };
+		F7DA852E2CF9F57000860768 /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = F7DA852D2CF9F57000860768 /* heroes.json */; };
+		F7DA852F2CF9F57000860768 /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = F7DA852D2CF9F57000860768 /* heroes.json */; };
+		F7DA85372CFA14EC00860768 /* Transformations.json in Resources */ = {isa = PBXBuildFile; fileRef = F7DA85362CFA14EC00860768 /* Transformations.json */; };
+		F7DA85382CFA14EC00860768 /* Transformations.json in Resources */ = {isa = PBXBuildFile; fileRef = F7DA85362CFA14EC00860768 /* Transformations.json */; };
+		F7DA853C2CFA532900860768 /* DBHeroes_ReactivoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA853A2CFA532900860768 /* DBHeroes_ReactivoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,20 +112,10 @@
 		F7DA85202CF9B0E800860768 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F7DA85232CF9B13700860768 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F7DA85242CF9B14A00860768 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F7DA852D2CF9F57000860768 /* heroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
+		F7DA85362CFA14EC00860768 /* Transformations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Transformations.json; sourceTree = "<group>"; };
+		F7DA853A2CFA532900860768 /* DBHeroes_ReactivoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHeroes_ReactivoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F7592B0F2CF21700004C8606 /* DBHeroes-ReactivoTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DBHeroes-ReactivoTests";
-			sourceTree = "<group>";
-		};
-		F7592B192CF21700004C8606 /* DBHeroes-ReactivoUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DBHeroes-ReactivoUITests";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F7592AF32CF216FF004C8606 /* Frameworks */ = {
@@ -184,10 +179,8 @@
 		F7592AED2CF216FF004C8606 = {
 			isa = PBXGroup;
 			children = (
-				F7DA851F2CF9B0E800860768 /* Localizable.strings */,
 				F7592B312CF217C1004C8606 /* DBHeroes-Reactivo */,
-				F7592B0F2CF21700004C8606 /* DBHeroes-ReactivoTests */,
-				F7592B192CF21700004C8606 /* DBHeroes-ReactivoUITests */,
+				F7DA853B2CFA532900860768 /* DBHeroes-ReactivoTests */,
 				F7615B702CF49F5E003C8F8A /* Frameworks */,
 				F7592AF72CF216FF004C8606 /* Products */,
 			);
@@ -205,6 +198,7 @@
 		F7592B312CF217C1004C8606 /* DBHeroes-Reactivo */ = {
 			isa = PBXGroup;
 			children = (
+				F7DA85392CFA52DE00860768 /* Resources */,
 				F7592B392CF2183E004C8606 /* Presentation */,
 				F7592B3A2CF21846004C8606 /* Domain */,
 				F7592B3B2CF21850004C8606 /* Data */,
@@ -377,6 +371,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7DA85392CFA52DE00860768 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7DA851F2CF9B0E800860768 /* Localizable.strings */,
+				F7DA852D2CF9F57000860768 /* heroes.json */,
+				F7DA85362CFA14EC00860768 /* Transformations.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F7DA853B2CFA532900860768 /* DBHeroes-ReactivoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7DA853A2CFA532900860768 /* DBHeroes_ReactivoTests.swift */,
+			);
+			path = "DBHeroes-ReactivoTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -414,9 +426,6 @@
 			);
 			dependencies = (
 				F7592B0E2CF21700004C8606 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F7592B0F2CF21700004C8606 /* DBHeroes-ReactivoTests */,
 			);
 			name = "DBHeroes-ReactivoTests";
 			packageProductDependencies = (
@@ -477,9 +486,11 @@
 			files = (
 				F72162012CF7938C004B08CA /* DetailHeroesViewController.xib in Resources */,
 				F756F1492CF87948002C4112 /* CollectionViewCell.xib in Resources */,
+				F7DA85382CFA14EC00860768 /* Transformations.json in Resources */,
 				F7592B352CF217C1004C8606 /* Assets.xcassets in Resources */,
 				F7592B372CF217C1004C8606 /* LaunchScreen.storyboard in Resources */,
 				F7615B552CF473ED003C8F8A /* LoginViewController.xib in Resources */,
+				F7DA852F2CF9F57000860768 /* heroes.json in Resources */,
 				F7DA85222CF9B0E800860768 /* Localizable.strings in Resources */,
 				F70728892CF5DE2600B88F59 /* HeroesTableViewController.xib in Resources */,
 				F707289D2CF61FC700B88F59 /* HeroesTableViewCell.xib in Resources */,
@@ -491,6 +502,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7DA85212CF9B0E800860768 /* Localizable.strings in Resources */,
+				F7DA852E2CF9F57000860768 /* heroes.json in Resources */,
+				F7DA85372CFA14EC00860768 /* Transformations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DA853C2CFA532900860768 /* DBHeroes_ReactivoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +775,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_SOURCE_FILE_NAMES[arch=*]" = "SourcePackages/checkouts/Kingfisher/*";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;

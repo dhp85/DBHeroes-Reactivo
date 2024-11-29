@@ -21,23 +21,25 @@ final class LoginUseCase: LoginUseCaseProtocol {
         
         if token != "" {
             KeyChainKc().saveKC(CONST_TOKEN_ID_KEYCHAIN, value: token)
-            print(CONST_TOKEN_ID_KEYCHAIN)
             return true
         } else {
             KeyChainKc().deleteKC(key: CONST_TOKEN_ID_KEYCHAIN)
             return false
         }
     }
-    
-    func logout() async {
-        KeyChainKc().deleteKC(key: CONST_TOKEN_ID_KEYCHAIN)
+}
+
+final class LoginUseCaseFake: LoginUseCaseProtocol {
+    func login(user: String, password: String) async throws -> Bool {
+        KeyChainKc().saveKC(CONST_TOKEN_ID_KEYCHAIN, value: "LoginFakeSuccess")
+        return true
     }
     
-    func validateToken() async -> Bool {
-        if KeyChainKc().loadKC(key: CONST_TOKEN_ID_KEYCHAIN) != "" {
-            return true
-        } else {
-            return false
-        }
+    
+    
+    var repo: LoginRepositoryProtocol
+    
+    init(repo: LoginRepositoryProtocol = DefaultLoginRepository(network: LoginNetwork())) {
+        self.repo = repo
     }
 }

@@ -19,3 +19,16 @@ final class HeroesRepository: HeroesRepositoryProtocol {
         return try await network.getHeroes(heroes: heroes)
     }
 }
+
+final class HerosRepositoryFake: HeroesRepositoryProtocol {
+    
+    private var network: HeroesNetworkProtocol
+    
+    init(network: HeroesNetworkProtocol = NetworkHerosFake()) {
+        self.network = network
+    }
+    
+    func getHeroes(heroes: String) async throws -> [HeroesModel] {
+        return try await network.getHeroes(heroes: heroes)
+    }
+}

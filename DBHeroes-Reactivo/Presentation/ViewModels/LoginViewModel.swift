@@ -24,10 +24,15 @@ final class LoginViewModel: ObservableObject {
     
     func login(username: String, password: String) {
         Task {
-            self.statusLogin = .loading
-            if (try await loginUseCase.login(user: username, password: password)) {
-                self.statusLogin = .success
-            } else {
+            do {
+                self.statusLogin = .loading
+                let success = try await loginUseCase.login(user: username, password: password)
+                if success {
+                    self.statusLogin = .success
+                } else {
+                    self.statusLogin = .error
+                }
+            } catch {
                 self.statusLogin = .error
             }
         }
