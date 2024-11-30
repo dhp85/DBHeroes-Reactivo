@@ -1,30 +1,33 @@
-Dragon Ball Reactivo
 
-Dragon Ball Reactivo es una app iOS que pone en práctica Combine, MVVM, Clean Architecture, async/await y otras tecnologías modernas para crear una experiencia fluida y reactiva. 
-Explora personajes icónicos de Dragon Ball y sus transformaciones mientras sigues las mejores prácticas de desarrollo móvil.
+# Dragon Ball Reactivo
 
-Características
+**Dragon Ball Reactivo** es una app iOS donde pongo en práctica **Combine**, **MVVM**, **Clean Architecture**, **async/await** y otras tecnologías modernas para crear una experiencia fluida y reactiva. Explora personajes icónicos de **Dragon Ball** y sus transformaciones mientras sigues las mejores prácticas de desarrollo móvil.
 
-	•	Login Reactivo: Utiliza CombineCocoa para gestionar el inicio de sesión de forma reactiva, con almacenamiento de tokens en Keychain.
-	•	Explora Personajes: Visualiza personajes icónicos como Goku y Vegeta, descubre sus transformaciones con imágenes cargadas y cacheadas mediante Kingfisher.
-	•	Clean Architecture: Separación clara entre capa de presentación, dominio y datos, siguiendo principios de MVVM y Repository.
-	•	Red Asíncrona: Llamadas HTTP usando async/await para obtener los datos de manera eficiente.
+## Características
 
-Tecnologías
+- **Login Reactivo**: Utiliza **CombineCocoa** para gestionar el inicio de sesión de forma reactiva y segura, con almacenamiento de tokens en **Keychain**.
+- **Explora Personajes**: Visualiza personajes como **Goku** y **Vegeta**, y sus transformaciones, con imágenes cargadas y cacheadas mediante **Kingfisher**.
+- **Clean Architecture**: Implementación de **MVVM** y **Repository Pattern** para mantener una estructura clara y mantenible.
+- **Red Asíncrona**: Llamadas HTTP utilizando **async/await** para obtener los datos de manera eficiente y moderna.
+- **Seguridad**: Almacenamiento seguro de tokens con **Keychain** para proteger la información sensible.
+- **UI con UIKit**: Implementación de la interfaz de usuario con **UIKit**, proporcionando una experiencia visual interactiva y adaptable.
 
-	•	Combine & CombineCocoa para programación reactiva.
- 
-	•	MVVM con Repository Pattern.
-	•	Clean Architecture.
-	•	async/await para gestión de llamadas asíncronas.
- 	•	Keychain para almacenamiento seguro de datos sensibles como tokens.
-	•	Kingfisher para la carga y caché eficiente de imágenes.
+## Tecnologías
 
-Instalación
-
-	1.	Clona el repositorio:
-
-git clone https://github.com/dhp85/DBHeroes-Reactivo.git
+- **UIKit** para diseño de interfaces y manejo de vistas.
+- **Combine** & **CombineCocoa** para programación reactiva.
+- **MVVM** con **Repository Pattern**.
+- **Clean Architecture**.
+- **async/await** para gestión de llamadas asíncronas.
+- **Keychain** para almacenamiento seguro de datos sensibles como tokens.
+- **Kingfisher** para la carga y caché eficiente de imágenes.
 
 
-	2.	Abre el proyecto en Xcode y ejecuta la app.
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/dragon-ball-reactivo.git
+
+2.	Abre el proyecto en Xcode y ejecuta la app.
