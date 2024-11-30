@@ -15,7 +15,7 @@ import XCTest
 final class DBHeroes_ReactivoTests: XCTestCase {
     
     
-    
+    // MARK: - LOGIN TESTS
    
     
     func testLoginFake() async throws {
@@ -114,7 +114,44 @@ final class DBHeroes_ReactivoTests: XCTestCase {
         XCTAssertEqual(view.password.text, "123456")
         
     }
+    
+    func testLogin_Data() async throws  {
+        let network = NetworkLoginFake()
+        XCTAssertNotNil(network)
+        
+        let repo = DefaultLoginRepository(network: network)
+        XCTAssertNotNil(repo)
+        let repo2 = LoginRepositoryFake()
+        XCTAssertNotNil(repo2)
+        
+        let token = try await repo.login(user: "goku", password: "123456")
+        XCTAssertNotNil(token)
+        print(token)
 
+       }
+       
+       func testLoginSuccessWithFakeUseCase() async throws {
+           // Configuración: Usa el caso de uso fake
+           let loginUseCaseFake = LoginUseCaseFake()
+           let viewModel = LoginViewModel(loginUseCase: loginUseCaseFake)
+           
+           // Espera
+           let expectation = XCTestExpectation(description: "Status should be success after login")
+           
+           // Ejecutar la función de login
+           viewModel.login(username: "testUser", password: "testPassword")
+           
+           // Validación asincrónica
+           DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+               XCTAssertEqual(viewModel.statusLogin, .success)
+               expectation.fulfill()
+           }
+           
+           // Espera que la expectativa se cumpla
+           await fulfillment(of: [expectation], timeout: 2.0)
+       }
+       
+    // MARK: - HEROES TESTS
     
     func testHeroesViewModel() async throws  {
         let vm = HeroesViewModel(useCaseHeroes: HeroesUseCaseFake())
@@ -199,6 +236,9 @@ final class DBHeroes_ReactivoTests: XCTestCase {
         
     }
 
+    
+    // MARK: - DETAIL TESTS
+    
     func testDetailHeroesViewModel() async throws {
         let model = HeroesModel(favorite: true, description: "true", id: "des", name: "goku", photo: "photo")
         let viewModel = DetailHeroesViewModel(hero: model , useCase: DetailUseCaseFake())
@@ -245,41 +285,6 @@ final class DBHeroes_ReactivoTests: XCTestCase {
         await fulfillment(of: [exp], timeout: 10)
     }
     
- func testLogin_Data() async throws  {
-     let network = NetworkLoginFake()
-     XCTAssertNotNil(network)
-     
-     let repo = DefaultLoginRepository(network: network)
-     XCTAssertNotNil(repo)
-     let repo2 = LoginRepositoryFake()
-     XCTAssertNotNil(repo2)
-     
-     let token = try await repo.login(user: "goku", password: "123456")
-     XCTAssertNotNil(token)
-     print(token)
-
-    }
-    
-    func testLoginSuccessWithFakeUseCase() async throws {
-        // Configuración: Usa el caso de uso fake
-        let loginUseCaseFake = LoginUseCaseFake()
-        let viewModel = LoginViewModel(loginUseCase: loginUseCaseFake)
-        
-        // Espera
-        let expectation = XCTestExpectation(description: "Status should be success after login")
-        
-        // Ejecutar la función de login
-        viewModel.login(username: "testUser", password: "testPassword")
-        
-        // Validación asincrónica
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            XCTAssertEqual(viewModel.statusLogin, .success)
-            expectation.fulfill()
-        }
-        
-        // Espera que la expectativa se cumpla
-        await fulfillment(of: [expectation], timeout: 2.0)
-    }
     
     func testDidSelectRowNavigatesToDetailScreen() {
         // Configuramos el ViewModel con datos para la tabla

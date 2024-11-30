@@ -23,9 +23,10 @@ final class DetailUseCase: DetailUseCaseProtocol {
     
 }
 
+// MARK: - DetailUseCaseFake
+
 final class DetailUseCaseFake: DetailUseCaseProtocol {
  
-    
     var repo: DetailHeroesRepositoryProtocol
     
     init(repo: DetailHeroesRepositoryProtocol = HeroesDetailRepository(network: NetworkDetailFake())) {

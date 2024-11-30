@@ -46,35 +46,35 @@ final class LoginViewController: UIViewController {
     func bindingUI() {
         // Bind username text field
         self.userName?.textPublisher
-            .compactMap { $0 }
-            .receive(on: DispatchQueue.main)
+            .compactMap { $0 } // Ignora valores nulos (asegura que sea un String válido).
+            .receive(on: DispatchQueue.main) // Se asegura de ejecutar en el hilo principal (UI).
             .sink { [weak self] userName in
-                print("Text user: \(userName)")
-                self?.user = userName
-                self?.loginButton?.isEnabled = userName.count >= 5
+                print("Text user: \(userName)") // Imprime el texto ingresado.
+                self?.user = userName // Guarda el texto en la propiedad `user`.
+                self?.loginButton?.isEnabled = userName.count >= 5 // Habilita el botón si el nombre tiene 5 caracteres o más.
             }
-            .store(in: &subscriptions)
+            .store(in: &subscriptions) // Almacena esta suscripción para que no se libere mientras se usa.
         
         // Bind password text field
         self.password?.textPublisher
-            .compactMap { $0 }
-            .receive(on: DispatchQueue.main)
+            .compactMap { $0 } // Asegura que no sea nulo.
+            .receive(on: DispatchQueue.main) // Ejecuta en el hilo principal.
             .sink { [weak self] data in
-                print("Text password: \(data)")
-                self?.pass = data
+                print("Text password: \(data)") // Imprime el texto ingresado.
+                self?.pass = data // Guarda el texto en la propiedad `pass`.
             }
             .store(in: &subscriptions)
         
         // Bind login button tap
         self.loginButton?.tapPublisher
-            .receive(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.main) // Ejecuta en el hilo principal.
             .sink(receiveValue: { [weak self] _ in
-                guard let user = self?.user,
-                      let pass = self?.pass, !pass.isEmpty else {
-                    self?.showAlert(titleKey: "Error", messageKey: "Contraseña vacia")
+                guard let user = self?.user, // Verifica que haya un usuario escrito.
+                      let pass = self?.pass, !pass.isEmpty else { // Verifica que la contraseña no esté vacía.
+                    self?.showAlert(titleKey: "Error", messageKey: "Contraseña vacia") // Muestra alerta si falla.
                     return
                 }
-                self?.viwModel?.login(username: user, password: pass)
+                self?.viwModel?.login(username: user, password: pass) // Llama al método de inicio de sesión en el ViewModel.
             })
             .store(in: &subscriptions)
     }

@@ -29,17 +29,18 @@ final class LoginUseCase: LoginUseCaseProtocol {
     }
 }
 
+// MARK: - LoginUseCaseFake
+
 final class LoginUseCaseFake: LoginUseCaseProtocol {
-    func login(user: String, password: String) async throws -> Bool {
-        KeyChainKc().saveKC(CONST_TOKEN_ID_KEYCHAIN, value: "LoginFakeSuccess")
-        return true
-    }
-    
-    
     
     var repo: LoginRepositoryProtocol
     
     init(repo: LoginRepositoryProtocol = DefaultLoginRepository(network: LoginNetwork())) {
         self.repo = repo
+    }
+    
+    func login(user: String, password: String) async throws -> Bool {
+        KeyChainKc().saveKC(CONST_TOKEN_ID_KEYCHAIN, value: "LoginFakeSuccess")
+        return true
     }
 }

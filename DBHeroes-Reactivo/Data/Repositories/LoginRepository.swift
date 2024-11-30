@@ -10,9 +10,9 @@ import Foundation
 final class DefaultLoginRepository: LoginRepositoryProtocol {
    
     
-    private var network: LoginNetworkprotocol
+    private var network: LoginNetworkProtocol
     
-    init(network: LoginNetworkprotocol) {
+    init(network: LoginNetworkProtocol) {
         self.network = network
     }
     
@@ -23,9 +23,9 @@ final class DefaultLoginRepository: LoginRepositoryProtocol {
 
 final class LoginRepositoryFake: LoginRepositoryProtocol {
     
-    private var network: LoginNetworkprotocol
+    private var network: LoginNetworkProtocol
     
-    init(network: LoginNetworkprotocol = NetworkLoginFake()) {
+    init(network: LoginNetworkProtocol = NetworkLoginFake()) {
         self.network = network
     }
     

@@ -13,6 +13,7 @@
                 <outlet property="descriptionHero" destination="GZz-pb-A9c" id="b3i-Tg-hix"/>
                 <outlet property="heroImage" destination="9b7-12-Y4Q" id="CpK-wk-eB8"/>
                 <outlet property="labelTransformation" destination="Jhr-bM-ErH" id="zjW-cb-k3m"/>
+                <outlet property="labelTransformations" destination="Jhr-bM-ErH" id="Bl4-B3-9s7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

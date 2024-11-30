@@ -19,6 +19,7 @@ final class HeroesUseCase: HeroesUseCaseProtocol {
     }
 }
 
+    // MARK: - HeroesUseCaseFake
 
 final class HeroesUseCaseFake: HeroesUseCaseProtocol {
     var repo: HeroesRepositoryProtocol

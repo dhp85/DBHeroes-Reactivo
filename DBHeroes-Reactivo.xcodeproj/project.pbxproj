@@ -231,7 +231,6 @@
 		F7592B3A2CF21846004C8606 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F7592B452CF218EB004C8606 /* Extensions */,
 				F7592B442CF218E0004C8606 /* UseCase */,
 				F7592B432CF218D7004C8606 /* Entities */,
 				F7592B422CF218CE004C8606 /* Protocols */,
@@ -244,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				F7592B402CF218B4004C8606 /* Repositories */,
-				F7592B3F2CF218A9004C8606 /* Local */,
 				F7592B3E2CF21879004C8606 /* Network */,
 			);
 			path = Data;
@@ -276,13 +274,6 @@
 				F7615B632CF495C6003C8F8A /* BaseNetwork */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		F7592B3F2CF218A9004C8606 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		F7592B402CF218B4004C8606 /* Repositories */ = {
@@ -333,13 +324,6 @@
 				F7615B812CF4D2FB003C8F8A /* LoginUseCase.swift */,
 			);
 			path = UseCase;
-			sourceTree = "<group>";
-		};
-		F7592B452CF218EB004C8606 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F7615B602CF4951C003C8F8A /* LoginView */ = {

@@ -47,7 +47,7 @@ final class HeroesTableViewController: UIViewController, UITableViewDataSource, 
     
     // MARK: - UI Configuration
     private func configureTitle() {
-        self.title = "Heroes"
+        self.title = NSLocalizedString("Heroes", comment: "")
     }
     
     // MARK: - Binding UI

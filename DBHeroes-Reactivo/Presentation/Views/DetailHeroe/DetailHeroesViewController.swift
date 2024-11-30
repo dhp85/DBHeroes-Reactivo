@@ -22,7 +22,7 @@ final class DetailHeroesViewController: UIViewController {
     @IBOutlet weak var labelTransformation: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var descriptionHero: UILabel!
-    
+    @IBOutlet weak var labelTransformations: UILabel!
     // MARK: - Properties
     private var viewModel: DetailHeroesViewModel
     private var suscriptions = Set<AnyCancellable>()
@@ -43,8 +43,10 @@ final class DetailHeroesViewController: UIViewController {
         configureCollectionView()
         configureView()
         bindUI()
+        labelTransformation.text = NSLocalizedString("Transformaciones", comment: "")
     }
     
+    // tenia problemas con la carga de datos de transformaciones cuando cargaba por segunda vez un heroe con transformaciones y lo solucione asi.
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         clearView()
@@ -52,7 +54,7 @@ final class DetailHeroesViewController: UIViewController {
     
     // MARK: - Binding Methods
     private func bindUI() {
-        Publishers.CombineLatest(viewModel.$hero, viewModel.$transformation)
+        Publishers.CombineLatest(viewModel.$hero, viewModel.$transformation)// Combina los valores emitidos por ambos publishers en un unico flujo. Siempre que uno de los publishers emite un valor, el combinador genera un nuevo par con los valores actuales de ambos publishers.
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (hero, transformation) in
                 // Configurar la imagen del héroe
