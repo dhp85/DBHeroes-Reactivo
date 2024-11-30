@@ -13,8 +13,6 @@ final class HeroesTableViewCell: UITableViewCell {
     @IBOutlet weak var heroImage: UIImageView!
     @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var descriptionHero: UILabel!
-    @IBOutlet weak var nextView: UILabel!
-    
     // MARK: - Static Properties
     static var identifier: String {
         String(describing: HeroesTableViewCell.self)
@@ -26,10 +24,6 @@ final class HeroesTableViewCell: UITableViewCell {
         configureImage()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
     
     // MARK: - Private Methods
     private func configureImage() {

@@ -86,9 +86,9 @@ final class HeroesTableViewController: UIViewController, UITableViewDataSource, 
         let cell = tableView.dequeueReusableCell(withIdentifier: HeroesTableViewCell.identifier, for: indexPath) as! HeroesTableViewCell
         
         let hero = viewModel.heroesList[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
         cell.nameHero.text = hero.name
         cell.descriptionHero.text = hero.description
-        cell.nextView.text = String(describing: ">")
         if let image = hero.photo {
             cell.heroImage.kf.setImage(with: URL(string: image))
         }

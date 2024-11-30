@@ -26,29 +26,18 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="-40" translatesAutoresizingMaskIntoConstraints="NO" id="AaW-HE-jSp">
-                                <rect key="frame" x="147" y="0.0" width="183.66666666666663" height="136"/>
+                                <rect key="frame" x="147" y="0.0" width="244" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liO-Z4-wO1">
-                                        <rect key="frame" x="68.333333333333343" y="0.0" width="47" height="88"/>
+                                        <rect key="frame" x="98.666666666666657" y="0.0" width="47" height="88"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFI-zg-vaU">
-                                        <rect key="frame" x="76.333333333333343" y="48" width="31" height="88"/>
+                                        <rect key="frame" x="106.66666666666669" y="48" width="31" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="INL-lx-Er2">
-                                <rect key="frame" x="349.66666666666669" y="58.000000000000007" width="41.333333333333314" height="20.333333333333336"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2l-X9-a0i">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -57,7 +46,6 @@
                         <constraints>
                             <constraint firstItem="AaW-HE-jSp" firstAttribute="top" secondItem="2cT-FO-rmc" secondAttribute="top" id="Khk-l3-7MA"/>
                             <constraint firstAttribute="bottom" secondItem="AaW-HE-jSp" secondAttribute="bottom" id="Wp0-rZ-mv6"/>
-                            <constraint firstAttribute="trailing" secondItem="INL-lx-Er2" secondAttribute="trailing" id="uHq-cN-gfV"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -74,7 +62,6 @@
                 <outlet property="descriptionHero" destination="GFI-zg-vaU" id="KwA-SS-veY"/>
                 <outlet property="heroImage" destination="H0Y-3X-S2Q" id="QXW-De-zZ9"/>
                 <outlet property="nameHero" destination="liO-Z4-wO1" id="siY-7v-1pO"/>
-                <outlet property="nextView" destination="y2l-X9-a0i" id="R3Q-2v-f67"/>
             </connections>
             <point key="canvasLocation" x="32.824427480916029" y="14.084507042253522"/>
         </tableViewCell>
