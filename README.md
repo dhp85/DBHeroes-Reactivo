@@ -28,6 +28,6 @@
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/dragon-ball-reactivo.git
+   https://github.com/dhp85/DBHeroes-Reactivo.git
 
 2.	Abre el proyecto en Xcode y ejecuta la app.
