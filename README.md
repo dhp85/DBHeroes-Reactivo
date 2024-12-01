@@ -31,3 +31,13 @@
    https://github.com/dhp85/DBHeroes-Reactivo.git
 
 2.	Abre el proyecto en Xcode y ejecuta la app.
+
+3.	### Instalación de Dependencias
+
+Las dependencias de este proyecto están gestionadas con **Swift Package Manager (SPM)**.
+Las versiones ya están resueltas y almacenadas en el archivo `Package.resolved`.
+
+#### Si encuentras algún problema:
+1. Abre el proyecto usando el archivo `.xcworkspace`.
+2. Selecciona `File > Packages > Resolve Package Versions` en Xcode.
+
