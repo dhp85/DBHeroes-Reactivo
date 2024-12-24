@@ -40,6 +40,8 @@ final class LoginViewController: UIViewController {
         configLenguage()
         bindViewModel()
         bindingUI()
+        userName.text = "diegohp85@gmail.com"
+        password.text = "123456"
     }
     
     // MARK: - UI Bindings
@@ -62,6 +64,7 @@ final class LoginViewController: UIViewController {
             .sink { [weak self] data in
                 print("Text password: \(data)") // Imprime el texto ingresado.
                 self?.pass = data // Guarda el texto en la propiedad `pass`.
+            
             }
             .store(in: &subscriptions)
         
